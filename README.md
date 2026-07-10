@@ -6,41 +6,41 @@ An interactive web-based CPU Scheduling Simulator that visualizes how different 
 ## ✨ Features
 
 -  Supports five CPU scheduling algorithms:
-  - First Come First Served (FCFS)
-  - Shortest Job First (SJF)
-  - Shortest Remaining Time First (SRTF)
-  - Round Robin (RR)
-  - Priority Scheduling
+    - First Come First Served (FCFS)
+    - Shortest Job First (SJF)
+    - Shortest Remaining Time First (SRTF)
+    - Round Robin (RR)
+    - Priority Scheduling
 
 -  Configure:
-  - Number of processes
-  - Arrival time
-  - Burst time
-  - Priority
-  - Context switch time
-  - Time quantum (Round Robin)
+    - Number of processes
+    - Arrival time
+    - Burst time
+    - Priority
+    - Context switch time
+    - Time quantum (Round Robin)
 
 -  Interactive Gantt Chart visualization
 
 -  Performance Metrics
-  - CPU Utilization
-  - Average Waiting Time
-  - Average Turnaround Time
+    - CPU Utilization
+    - Average Waiting Time
+    - Average Turnaround Time
 
 -  Detailed Output Table
-  - Completion Time
-  - Waiting Time
-  - Turnaround Time
+    - Completion Time
+    - Waiting Time
+    - Turnaround Time
 
 -  Data Visualization Charts
-  - Waiting Time Chart
-  - Turnaround Time Chart
+    - Waiting Time Chart
+    - Turnaround Time Chart
 
 -  Built-in Documentation Page explaining:
-  - CPU Scheduling
-  - Scheduling Algorithms
-  - Advantages & Limitations
-  - Scheduling Concepts
+    - CPU Scheduling
+    - Scheduling Algorithms
+    - Advantages & Limitations
+    - Scheduling Concepts
 
 -  Step-by-step execution explanation for each algorithm
 
