@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPU Scheduling Documentation</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/docs.css">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <div class="brand"><span class="dot"></span> CPU Scheduling Simulator</div>
+    <div class="nav-links" id="navLinks">
+      <i class="fas fa-times nav-close" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="index.html">Simulator</a></li>
+        <li><a href="docs.html" class="active">Docs</a></li>
+      </ul>
+    </div>
+    <i class="fas fa-bars nav-toggle" onclick="showMenu()"></i>
+  </nav>
+
+  <section class="docs-hero" data-aos="fade-down">
+    <h1>CPU Scheduling Documentation</h1>
+    <p>Explore the concepts, algorithms, and execution strategies used in CPU process scheduling.</p>
+  </section>
+
+  <main class="docs-wrap">
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>What is CPU Scheduling?</h1>
+      <p>
+       CPU scheduling is the process of selecting which process should execute next.
+        The operating system chooses a process from the ready queue based on a scheduling
+        algorithm to improve CPU utilization, system performance, and resource allocation.
+    </p>
+    </section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>Why CPU Scheduling Matters</h1>
+      <p>
+        CPU scheduling plays a vital role in multitasking operating systems by deciding
+         which process should execute next. It helps maximize CPU utilization, improve
+         system performance, reduce waiting time, and ensure fair allocation of processor
+         resources among multiple processes.
+       </p>
+
+      <h4>Objectives of CPU Scheduling</h4>
+      <ul>
+        <li>Maximize CPU utilization.</li>
+        <li>Ensure fair process execution.</li>
+        <li>Increase system throughput.</li>
+        <li>Reduce turnaround time.</li>
+        <li>Minimize waiting time.</li>
+        <li>Improve response time.</li>
+      </ul>
+    </section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>Key Terminology</h1>
+      <ul>
+        <li><strong>Burst Time:</strong> CPU time required for a process to complete execution.</li>
+        <li><strong>Arrival Time:</strong> Time at which a process enters the ready queue.</li>
+        <li><strong>Completion Time:</strong> Time when a process finishes execution.</li>
+        <li><strong>Turnaround Time:</strong> Total time from arrival to completion. <br><em>Turnaround Time = Completion Time − Arrival Time</em></li>
+        <li><strong>Waiting Time:</strong> Time spent waiting in the ready queue.<br><em>Waiting Time = Turnaround Time − Burst Time</em></li>
+        <li><strong>Response Time:</strong> Time from arrival until the process first gets CPU access.</li>
+        <li><strong>Ready Queue:</strong> Queue of processes waiting for CPU allocation.</li>
+        <li><strong>Process:</strong> A program currently being executed by the operating system.</li>
+        <li><strong>CPU–I/O Burst Cycle:</strong> Alternating sequence of CPU execution and I/O operations.</li>
+        <li><strong>Multiprogramming:</strong> Running multiple processes in memory to improve CPU utilization.</li>
+      </ul>
+    </section>
+
+ <section class="doc-card" data-aos="fade-up">
+
+    <h1>Types of CPU Scheduling</h1>
+
+    <p>
+       CPU scheduling algorithms are classified into two types based on whether
+       a running process can be interrupted before completion.
+    </p>
+
+    <h4>Preemptive Scheduling</h4>
+
+    <p>
+       A running process can be interrupted and replaced by another process with
+       higher priority or shorter remaining execution time.
+    </p>
+
+    <h4>Non-Preemptive Scheduling</h4>
+
+    <p>
+       Once a process starts executing, it continues until completion or until it
+       voluntarily releases the CPU.
+    </p>
+
+    <h4>Comparison</h4>
+
+    <ul>
+        <li><strong>Preemptive:</strong> Allows process interruption, provides better responsiveness, and is ideal for multitasking environments.</li>
+
+        <li><strong>Non-Preemptive:</strong> Does not interrupt a running process, offers simpler implementation, and reduces context-switching overhead.</li>
+    </ul>
+
+</section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>Scheduling Algorithms Implemented</h1>
+      <ul>
+        <li>First Come First Serve (FCFS)</li>
+        <li>Shortest Job First (SJF)</li>
+        <li>Shortest Remaining Time First (SRTF)</li>
+        <li>Round Robin (RR)</li>
+        <li>Priority Scheduling</li>
+      </ul>
+    </section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>1. First Come First Served (FCFS)</h1>
+      <p>First Come First Served (FCFS) is the simplest CPU scheduling algorithm.
+        Processes are executed in the order they arrive in the ready queue, following
+        the First-In, First-Out (FIFO) principle.</p>
+      <h4>Advantages</h4>
+      <ul><li>Simple and easy to implement.</li>
+          <li>Processes are executed fairly in arrival order.</li>
+      </ul>
+      <h4>Limitations</h4>
+      <ul>
+      <li>Long processes can delay shorter ones (Convoy Effect).</li>
+        <li>May result in high average waiting and turnaround times.</li>
+      </ul>
+      <a class="btn btn-primary" href="index.html">Launch Simulator</a>
+    </section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>2. Shortest Job First (SJF)</h1>
+      <p>Shortest Job First (SJF) schedules the process with the smallest CPU burst time first.
+        It is designed to minimize average waiting and turnaround times, making it one of the
+        most efficient scheduling algorithms.</p>
+      <h4>Advantages</h4>
+      <ul>
+        <li>Reduces average waiting and turnaround times.</li>
+        <li>Efficient for workloads with shorter processes.</li>
+      </ul>
+      <h4>Limitations</h4>
+      <ul>
+        <li>Requires an estimate of CPU burst time.</li>
+        <li>Long processes may experience starvation.</li>
+      </ul>
+      <a class="btn btn-primary" href="index.html">Launch Simulator</a>
+    </section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>3. Shortest Remaining Time First (SRTF)</h1>
+      <p>Shortest Remaining Time First (SRTF) is the preemptive version of SJF.
+        The CPU is always allocated to the process with the shortest remaining
+        execution time, allowing newly arrived shorter processes to preempt the current one.
+    </p>
+      <h4>Advantages</h4>
+      <ul>
+        <li>Minimizes average waiting and turnaround times.</li>
+        <li>Provides better responsiveness for shorter processes.</li>
+    </ul>
+      <h4>Limitations</h4>
+      <ul>
+        <li>Frequent context switching increases system overhead.</li>
+        <li>Long processes may experience starvation.</li>
+    </ul>
+      <a class="btn btn-primary" href="index.html">Launch Simulator</a>
+    </section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>4. Round Robin (RR)</h1>
+      <p>Round Robin (RR) is a preemptive scheduling algorithm that allocates
+        each process a fixed time quantum in a cyclic order. It provides fair
+        CPU access and is widely used in time-sharing operating systems.</p>
+      <h4>Advantages</h4>
+      <ul>
+       <li>Ensures fair CPU allocation for all processes.</li>
+        <li>Prevents starvation and improves system responsiveness.</li>
+      </ul>
+      <h4>Limitations</h4>
+      <ul>
+        <li>Choosing an inappropriate time quantum can reduce performance.</li>
+        <li>Frequent context switching may increase system overhead.</li>
+      </ul>
+      <a class="btn btn-primary" href="index.html">Launch Simulator</a>
+    </section>
+
+    <section class="doc-card" data-aos="fade-up">
+      <h1>5. Priority Scheduling</h1>
+      <p> Priority Scheduling executes processes based on their assigned priority.
+        Processes with higher priority are scheduled before lower-priority ones,
+        making it suitable for systems where certain tasks require immediate attention.
+    </p>
+      <h4>Advantages</h4>
+      <ul> 
+        <li>Ensures high-priority tasks are executed promptly.</li>
+        <li>Provides flexible scheduling based on process importance.</li>
+    </ul>
+      <h4>Limitations</h4>
+      <ul>
+        <li>Low-priority processes may experience starvation.</li>
+        <li>Determining appropriate priority levels can be challenging.</li>
+      </ul>
+      <a class="btn btn-primary" href="index.html">Launch Simulator</a>
+    </section>
+
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 650,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80
+    });
+
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+    function hideMenu() {
+      navLinks.style.right = "-240px";
+    }
+  </script>
+
+</body>
+
+</html>

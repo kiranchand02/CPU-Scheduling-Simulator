@@ -1,0 +1,87 @@
+.docs-hero {
+  text-align: center;
+  padding: 64px 20px 40px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.docs-hero h1 {
+  font-size: 34px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.docs-hero p {
+  margin-top: 10px;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.docs-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 50px 5% 90px;
+}
+
+.doc-card {
+  position: relative;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+  padding: 36px 40px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.doc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0.85;
+}
+
+.doc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.12);
+}
+
+.doc-card h1 {
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: var(--color-text);
+}
+
+.doc-card p {
+  color: var(--color-text);
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.doc-card ul {
+  margin: 10px 0 16px 20px;
+  color: var(--color-text);
+}
+
+.doc-card li {
+  margin-bottom: 6px;
+}
+
+.doc-card h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  margin: 18px 0 6px;
+}
+
+.doc-card .btn {
+  margin-top: 16px;
+}
